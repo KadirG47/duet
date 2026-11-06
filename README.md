@@ -54,7 +54,7 @@ Get them from the **[latest release](https://github.com/KadirG47/duet/releases/l
 </p>
 
 ### Duet Mods
-A built-in PvP and HUD mod set for Fabric 1.21.11: hit sounds, reach and combo display, CPS, W-tap trainer, custom crosshair with cooldown ring, shield timer, enemy actions, damage numbers, loot glow, totem pops, kill banners, armor and inventory HUD, and more. It's fair play: no ESP, no macros, and no showing other players' health or items.
+A built-in PvP and HUD mod set for Fabric 1.21.11: hit sounds, reach and combo display, CPS, W-tap trainer, custom crosshair with cooldown ring, shield timer, enemy actions, damage numbers, loot glow, totem pops, kill banners, armor and inventory HUD, and more.
 
 ### Make it yours
 - **Themes**: seven colour themes, plus seasonal ones that switch on by themselves for Halloween, Christmas, New Year, Valentine's, Easter and Miku's birthday.
