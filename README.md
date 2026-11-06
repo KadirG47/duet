@@ -1,4 +1,4 @@
-# Twin Tails MC
+# Duet
 
 A small, fast launcher for **Minecraft: Java Edition** on Windows, made by Kadir (Hydrate) for myself and the friends on our SMP.
 
@@ -8,7 +8,8 @@ A small, fast launcher for **Minecraft: Java Edition** on Windows, made by Kadir
 - **Official game files** – downloads Minecraft, libraries and assets from Mojang's servers, Fabric from FabricMC, and Java (Eclipse Temurin) when needed
 - **Mods from Modrinth** – search and install mods, resource packs and shader packs, with their required dependencies
 - **Tuned Java settings** – launch profiles (generational ZGC for smooth frame times, tuned G1 for max FPS, or low memory), RAM control, high-performance GPU preference and higher CPU priority
-- **Light** – about 4 MB installer, ~35 MB of RAM, and it hides itself while you play
+- **Themes & backgrounds** – color themes, plus screenshots, images, GIFs or looping videos as backgrounds (videos pause while you play)
+- **Light** – a few MB installer, ~35 MB of RAM, and it hides itself while you play
 
 ## Microsoft sign-in
 
