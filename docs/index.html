@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Duet — the fast, good-looking Minecraft launcher</title>
+<meta name="description" content="Duet is a free Minecraft: Java Edition launcher for Windows and Linux. Fabric, Quilt, Forge and NeoForge, one-click modpacks, built-in speed mods, themes and skins.">
+<meta property="og:title" content="Duet — Minecraft launcher">
+<meta property="og:description" content="Fast, good-looking and easy. Modpacks in one click, built-in speed mods, themes, skins.">
+<meta property="og:image" content="https://kadirg47.github.io/duet/banner.jpg">
+<meta name="theme-color" content="#7c3aed">
+<link rel="icon" href="emblem-512.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07060b;--panel:rgba(255,255,255,.04);--line:rgba(255,255,255,.08);--text:#ecebf3;--muted:#a19db3;--accent:#7c3aed;--accent2:#c4a8ff;--pink:#e879f9}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:10;backdrop-filter:blur(14px);background:rgba(7,6,11,.7);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:18px;height:64px}
+nav .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;text-decoration:none}
+nav .brand img{width:34px;height:34px}
+nav .links{margin-left:auto;display:flex;gap:22px;font-size:14.5px;color:var(--muted)}
+nav .links a{text-decoration:none}nav .links a:hover{color:var(--text)}
+.hero{position:relative;overflow:hidden;padding:88px 0 70px}
+.hero::before{content:"";position:absolute;inset:-20% -10% auto;height:120%;background:radial-gradient(ellipse 60% 50% at 70% 30%,rgba(124,58,237,.38),transparent 70%),radial-gradient(ellipse 40% 40% at 90% 60%,rgba(232,121,249,.22),transparent 70%);pointer-events:none}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.eyebrow{display:inline-flex;gap:8px;align-items:center;font-size:13px;font-weight:600;color:var(--accent2);background:rgba(124,58,237,.14);border:1px solid rgba(124,58,237,.35);padding:6px 12px;border-radius:999px}
+h1{font-size:clamp(44px,7vw,84px);line-height:1;letter-spacing:-3px;margin:20px 0 18px;font-weight:800;background:linear-gradient(180deg,#fff,#d6c6ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:20px;color:var(--muted);max-width:540px;margin:0 0 30px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 24px;border-radius:14px;font-weight:700;font-size:16px;text-decoration:none;border:1px solid var(--line);background:var(--panel);transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-1px);background:rgba(255,255,255,.08)}
+.btn.primary{background:linear-gradient(135deg,#8b5cf6,#6d28d9);border-color:transparent;box-shadow:0 10px 30px rgba(124,58,237,.45)}
+.btn.primary:hover{background:linear-gradient(135deg,#9d6bff,#7c3aed)}
+.btn svg{width:20px;height:20px}
+.small{font-size:13px;color:var(--muted);margin-top:14px}
+.small a{color:var(--accent2)}
+.emblem{width:100%;max-width:440px;justify-self:center;filter:drop-shadow(0 30px 60px rgba(124,58,237,.45));animation:float 7s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-12px)}}
+@media (prefers-reduced-motion:reduce){.emblem{animation:none}}
+.shot{margin:10px auto 0;max-width:1100px;border-radius:18px;overflow:hidden;border:1px solid var(--line);box-shadow:0 40px 100px rgba(0,0,0,.6)}
+.shot img{display:block;width:100%}
+section{padding:80px 0}
+h2{font-size:clamp(30px,4vw,44px);letter-spacing:-1.2px;margin:0 0 12px}
+.sub{color:var(--muted);font-size:18px;max-width:640px;margin:0 0 40px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:24px}
+.card .ic{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:rgba(124,58,237,.16);color:var(--accent2);margin-bottom:14px}
+.card .ic svg{width:22px;height:22px}
+.card h3{margin:0 0 6px;font-size:18px}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+.duo img{width:100%;border-radius:14px;border:1px solid var(--line);display:block}
+.dl{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.dl .card{display:flex;flex-direction:column;gap:6px}
+.dl .card .btn{margin-top:14px;justify-content:center;padding:12px 18px;font-size:15px}
+.dl .card.rec{border-color:rgba(124,58,237,.6);background:linear-gradient(180deg,rgba(124,58,237,.14),rgba(255,255,255,.03))}
+.tag{font-size:11.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--accent2)}
+details{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:600}
+details p{color:var(--muted);margin:10px 0 0}
+code{background:rgba(255,255,255,.07);padding:2px 6px;border-radius:6px;font-size:13.5px}
+footer{border-top:1px solid var(--line);padding:36px 0 50px;color:var(--muted);font-size:13.5px;text-align:center}
+footer img{width:44px;opacity:.9}
+footer .legal{font-size:11.5px;letter-spacing:.3px;margin-top:6px;opacity:.75}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr}.emblem{max-width:280px;order:-1}.grid,.dl{grid-template-columns:1fr 1fr}nav .links{display:none}}
+@media (max-width:600px){.grid,.dl,.duo{grid-template-columns:1fr}.hero{padding:50px 0}.lead{font-size:17px}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="brand" href="#"><img src="emblem-512.png" alt="">Duet</a>
+  <div class="links"><a href="#features">Features</a><a href="#download">Download</a><a href="#faq">FAQ</a><a href="https://github.com/KadirG47/duet">GitHub</a></div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div>
+    <span class="eyebrow" id="ver">Free · Windows &amp; Linux</span>
+    <h1>Duet</h1>
+    <p class="lead">The fast, good-looking Minecraft launcher. Modpacks in one click, built-in speed mods, themes and skins, and it updates itself.</p>
+    <div class="cta">
+      <a class="btn primary" id="main-dl" href="https://github.com/KadirG47/duet/releases/latest">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>
+        <span id="main-dl-text">Download Duet</span>
+      </a>
+      <a class="btn" href="#features">See what's inside</a>
+    </div>
+    <div class="small" id="other">Also for <a href="#download">Linux and Windows</a>.</div>
+  </div>
+  <img class="emblem" src="emblem-512.png" alt="Duet emblem">
+</div>
+<div class="wrap"><div class="shot"><img src="home.jpg" alt="Duet home screen"></div></div>
+</header>
+
+<section id="features"><div class="wrap">
+  <h2>Everything you need, nothing in the way</h2>
+  <p class="sub">Built for players who just want to play — and for the ones who like to tweak everything.</p>
+  <div class="grid">
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8l-9-5-9 5v8l9 5z"/><path d="M3.3 7.5L12 12l8.7-4.5M12 22V12"/></svg></div><h3>Every mod loader</h3><p>Fabric, Quilt, Forge and NeoForge. Duet installs the loader and the right Java for you.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg></div><h3>Modpacks in one click</h3><p>Browse Modrinth's modpacks or drop in a .mrpack. Minecraft, mods and configs are set up for you.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></div><h3>Built for FPS</h3><p>Tuned Java profiles and built-in speed mods like Sodium and Lithium, with no FPS cap and VSync off on new instances.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div><h3>See further</h3><p>Turn on Far view for 50+ chunk render distance with Voxy or Distant Horizons — one switch.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3l-5 3 2 5 3-1v11h8V10l3 1 2-5-5-3a4 4 0 0 1-8 0z"/></svg></div><h3>Skins &amp; capes</h3><p>A 3D skin preview, your own skin library, copy any player's skin and switch capes in a click.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Crash doctor</h3><p>When the game crashes, Duet tells you why in plain words and fixes it — update, install or turn off the right mod.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 9 9c0-.6-.5-1-1-1h-3a2 2 0 0 1-2-2V6c0-.6-.4-1-1-1"/><circle cx="7.5" cy="10.5" r="1"/><circle cx="10" cy="7" r="1"/><circle cx="8" cy="15" r="1"/></svg></div><h3>Themes that celebrate</h3><p>Seven colour themes plus seasonal ones for Halloween, Christmas, New Year and more. Video backgrounds and music.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14M5 12h14M5 16h9"/></svg></div><h3>15 languages</h3><p>English, 中文, हिन्दी, Español, العربية, Français, বাংলা, Português, Русский, Indonesia, اردو, Deutsch, 日本語, Tiếng Việt, Türkçe.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg></div><h3>Always up to date</h3><p>Duet updates itself with one click. Discord status shows what you're playing.</p></div>
+  </div>
+  <div class="duo"><img src="performance.jpg" alt="Performance settings"><img src="halloween.jpg" alt="Halloween theme"></div>
+</div></section>
+
+<section id="download"><div class="wrap">
+  <h2>Download</h2>
+  <p class="sub">Free. Pick your system — after that, Duet keeps itself updated.</p>
+  <div class="dl">
+    <div class="card" data-os="win"><span class="tag">Windows 10 / 11</span><h3>Installer</h3><p>Installs in seconds, updates automatically.</p><a class="btn primary" data-asset="x64-setup.exe" href="https://github.com/KadirG47/duet/releases/latest">Download .exe</a></div>
+    <div class="card" data-os="linux"><span class="tag">Linux · any distro</span><h3>AppImage</h3><p>Runs everywhere, updates automatically. Make it executable, then open it.</p><a class="btn" data-asset="amd64.AppImage" href="https://github.com/KadirG47/duet/releases/latest">Download AppImage</a></div>
+    <div class="card" data-os="deb"><span class="tag">Ubuntu · Debian · Mint</span><h3>.deb package</h3><p>Installs with your package manager, codecs included.</p><a class="btn" data-asset="amd64.deb" href="https://github.com/KadirG47/duet/releases/latest">Download .deb</a></div>
+  </div>
+  <p class="small">All versions and release notes: <a href="https://github.com/KadirG47/duet/releases">GitHub releases</a>.</p>
+</div></section>
+
+<section id="faq"><div class="wrap">
+  <h2>Questions</h2>
+  <details><summary>Windows says "Windows protected your PC"</summary><p>Duet isn't code-signed yet, so SmartScreen warns about new apps. Click <b>More info → Run anyway</b>. Official downloads are only on this site and on GitHub.</p></details>
+  <details><summary>Do I need a Minecraft account?</summary><p>Yes — you sign in with the Microsoft account that owns Minecraft: Java Edition, on Microsoft's own page. Duet never sees your password. Microsoft sign-in is currently waiting for Mojang's approval for new launchers.</p></details>
+  <details><summary>Can I keep my Modrinth App instances?</summary><p>Yes. Duet imports your Modrinth App profiles without moving any files, so both launchers share them.</p></details>
+  <details><summary>A video background doesn't play on Linux</summary><p>Use a <code>.webm</code> video, or install the codecs: <code>sudo apt install gstreamer1.0-libav gstreamer1.0-plugins-good</code>.</p></details>
+</div></section>
+
+<footer><div class="wrap">
+  <img src="emblem-512.png" alt=""><br>
+  © 2026 Hydrate (KadirG47). All rights reserved. · <a href="https://github.com/KadirG47/duet">GitHub</a>
+  <div class="legal">NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.</div>
+</div></footer>
+
+<script>
+// Point the buttons at the real files of the newest release, and pick the right one for this computer.
+(async () => {
+  const ua = navigator.userAgent;
+  const isLinux = /Linux/i.test(ua) && !/Android/i.test(ua);
+  try {
+    const r = await fetch("https://api.github.com/repos/KadirG47/duet/releases/latest");
+    if (!r.ok) return;
+    const rel = await r.json();
+    document.getElementById("ver").textContent = "Version " + rel.tag_name.replace(/^v/, "") + " · Windows & Linux";
+    const url = (end) => (rel.assets.find((a) => a.name.endsWith(end)) || {}).browser_download_url;
+    document.querySelectorAll("[data-asset]").forEach((a) => { const u = url(a.dataset.asset); if (u) a.href = u; });
+    const main = document.getElementById("main-dl");
+    const u = url(isLinux ? "amd64.AppImage" : "x64-setup.exe");
+    if (u) { main.href = u; document.getElementById("main-dl-text").textContent = isLinux ? "Download for Linux" : "Download for Windows"; }
+    document.getElementById("other").innerHTML = isLinux ? 'Also for <a href="#download">Windows and Debian/Ubuntu</a>.' : 'Also for <a href="#download">Linux</a>.';
+    document.querySelector(isLinux ? '[data-os="linux"]' : '[data-os="win"]').classList.add("rec");
+  } catch { /* keep the links to the releases page */ }
+})();
+</script>
+</body>
+</html>
