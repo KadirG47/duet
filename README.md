@@ -41,11 +41,13 @@ Get them from the **[latest release](https://github.com/KadirG47/duet/releases/l
 - **Every mod loader**: Fabric, Quilt, Forge and NeoForge, from the newest Minecraft to classics like 1.12.2. Duet installs the loader and the right Java for you.
 - **Modpacks in one click**: browse Modrinth's modpacks or drop in an `.mrpack` file. Minecraft, the loader, every mod and its configs are set up automatically.
 - **Mods, resource packs and shaders**: search Modrinth, install with dependencies, and update everything with one button.
-- **Bring your instances**: imports your Modrinth App profiles without moving any files.
+- **Bring your stuff**: copies instances from the Modrinth App, Dawn (Feather), Prism, MultiMC, CurseForge, ATLauncher, GDLauncher and the official launcher — worlds, mods, packs, settings and servers. It asks first and never touches the other launcher's files.
 
 ### Built for FPS
 - **Tuned Java profiles**: Smooth (generational ZGC for frame times without spikes), Max FPS (tuned G1) or Low RAM.
-- **Built-in speed mods**: Sodium, Lithium, FerriteCore, ImmediatelyFast, EntityCulling, MoreCulling, Dynamic FPS and Iris load automatically on Fabric and Quilt. Your mods folder stays untouched.
+- **Built-in speed mods**: Sodium, Lithium, FerriteCore, ImmediatelyFast, EntityCulling, MoreCulling, BadOptimizations, Exordium, Dynamic FPS and Iris load automatically on Fabric and Quilt. Your mods folder stays untouched.
+- **NVIDIA turbo**: on RTX and GTX 16 cards, Nvidium draws terrain with mesh shaders for much higher FPS at long render distances.
+- **FPS check**: shows which mods and video settings cost the most FPS in an instance, with one click to turn a mod off.
 - **Far view**: 50+ chunk render distance with Voxy or Distant Horizons, one toggle.
 - **No FPS cap**: new instances start with uncapped FPS and VSync off. Duet also prefers your fast GPU and sleeps while you play.
 
@@ -93,7 +95,7 @@ Linux plays videos through GStreamer. Use a <code>.webm</code> video, or install
 <details>
 <summary><b>Where does Duet keep its files?</b></summary>
 <br>
-Windows: <code>%APPDATA%\Duet</code> · Linux: <code>~/.local/share/Duet</code>. Imported Modrinth App profiles stay where they are, and both launchers share them.
+Windows: <code>%APPDATA%\Duet</code> · Linux: <code>~/.local/share/Duet</code>. Imported instances are copied into this folder; the other launcher keeps its own files.
 </details>
 
 <details>
