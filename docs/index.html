@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Duet — the fast, good-looking Minecraft launcher</title>
-<meta name="description" content="Duet is a free Minecraft: Java Edition launcher for Windows and Linux. Fabric, Quilt, Forge and NeoForge, one-click modpacks, built-in speed mods, themes and skins.">
+<meta name="description" content="Duet is a free Minecraft: Java Edition launcher for Windows and Linux. Play with friends, one-click modpacks, built-in speed mods tuned for your PC, Fabric, Quilt, Forge and NeoForge, themes and skins.">
 <meta property="og:title" content="Duet — Minecraft launcher">
-<meta property="og:description" content="Fast, good-looking and easy. Modpacks in one click, built-in speed mods, themes, skins.">
-<meta property="og:image" content="https://kadirg47.github.io/duet/banner.jpg">
+<meta property="og:description" content="Duet 1.0 is out: friends in the launcher, modpacks in one click, built-in speed mods, themes and skins.">
+<meta property="og:image" content="https://hydrate36.github.io/duet/banner.jpg">
 <meta name="theme-color" content="#7c3aed">
 <link rel="icon" href="emblem-512.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -64,6 +64,14 @@ details{background:var(--panel);border:1px solid var(--line);border-radius:14px;
 summary{cursor:pointer;font-weight:600}
 details p{color:var(--muted);margin:10px 0 0}
 code{background:rgba(255,255,255,.07);padding:2px 6px;border-radius:6px;font-size:13.5px}
+.new{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.new .card{position:relative;overflow:hidden;padding:28px;background:linear-gradient(180deg,rgba(124,58,237,.16),rgba(255,255,255,.03));border-color:rgba(124,58,237,.45)}
+.new .card::after{content:"";position:absolute;right:-40px;top:-40px;width:140px;height:140px;border-radius:50%;background:radial-gradient(circle,rgba(232,121,249,.22),transparent 70%);pointer-events:none}
+.new .card h3{font-size:20px;margin:0 0 8px}
+.new ul{margin:12px 0 0;padding-left:18px;color:var(--muted);font-size:14.5px}
+.new li{margin:4px 0}
+.pill{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#fff;background:linear-gradient(135deg,#8b5cf6,#e879f9);padding:4px 10px;border-radius:999px;margin-bottom:14px}
+@media (max-width:900px){.new{grid-template-columns:1fr}}
 footer{border-top:1px solid var(--line);padding:36px 0 50px;color:var(--muted);font-size:13.5px;text-align:center}
 footer img{width:44px;opacity:.9}
 footer .legal{font-size:11.5px;letter-spacing:.3px;margin-top:6px;opacity:.75}
@@ -74,20 +82,20 @@ footer .legal{font-size:11.5px;letter-spacing:.3px;margin-top:6px;opacity:.75}
 <body>
 <nav><div class="wrap">
   <a class="brand" href="#"><img src="emblem-512.png" alt="">Duet</a>
-  <div class="links"><a href="#features">Features</a><a href="#download">Download</a><a href="#faq">FAQ</a><a href="https://github.com/KadirG47/duet">GitHub</a></div>
+  <div class="links"><a href="#new">New in 1.0</a><a href="#features">Features</a><a href="#download">Download</a><a href="#faq">FAQ</a><a href="https://github.com/Hydrate36/duet">GitHub</a></div>
 </div></nav>
 
 <header class="hero"><div class="wrap">
   <div>
-    <span class="eyebrow" id="ver">Free · Windows &amp; Linux</span>
+    <span class="eyebrow" id="ver">Duet 1.0 is out · Free · Windows &amp; Linux</span>
     <h1>Duet</h1>
-    <p class="lead">The fast, good-looking Minecraft launcher. Modpacks in one click, built-in speed mods, themes and skins, and it updates itself.</p>
+    <p class="lead">The fast, good-looking Minecraft launcher. Play with your friends, get modpacks in one click and more FPS out of the box — with themes, skins, and updates that install themselves.</p>
     <div class="cta">
-      <a class="btn primary" id="main-dl" href="https://github.com/KadirG47/duet/releases/latest">
+      <a class="btn primary" id="main-dl" href="https://github.com/Hydrate36/duet/releases/latest">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>
         <span id="main-dl-text">Download Duet</span>
       </a>
-      <a class="btn" href="#features">See what's inside</a>
+      <a class="btn" href="#new">What's new in 1.0</a>
     </div>
     <div class="small" id="other">Also for <a href="#download">Linux and Windows</a>.</div>
   </div>
@@ -96,19 +104,39 @@ footer .legal{font-size:11.5px;letter-spacing:.3px;margin-top:6px;opacity:.75}
 <div class="wrap"><div class="shot"><img src="home.jpg" alt="Duet home screen"></div></div>
 </header>
 
+<section id="new"><div class="wrap">
+  <span class="pill">New in 1.0</span>
+  <h2>Out of beta, and made for playing together</h2>
+  <p class="sub">The first official release. Everything from the beta stays exactly as you set it up.</p>
+  <div class="new">
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.2a6.5 6.5 0 0 1 3.5 5.8"/></svg></div>
+      <h3>Friends</h3><p>See who's online in Duet and what they're playing — then join their server with one click.</p>
+      <ul><li>Add friends by their Minecraft name</li><li>Join starts your matching modpack and connects</li><li>Show or hide your game and server anytime</li><li>Your login never leaves your PC</li></ul></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9"/></svg></div>
+      <h3>First-start setup</h3><p>Every new modpack starts with a few quick questions, so you never dig through menus.</p>
+      <ul><li>Menu key, FOV, brightness, GUI size</li><li>Sensitivity, toggle sprint and sneak</li><li>Render distance, sound volumes</li><li>Copy everything from another modpack in one click</li></ul></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+      <h3>HUD editor</h3><p>Place FPS, CPS, armor, effects and the rest right on top of your game.</p>
+      <ul><li>Drag elements — they snap into place</li><li>Size and background sliders</li><li>Right-click for all of an element's settings</li><li>Show or hide anything from one list</li></ul></div>
+  </div>
+</div></section>
+
 <section id="features"><div class="wrap">
   <h2>Everything you need, nothing in the way</h2>
   <p class="sub">Built for players who just want to play — and for the ones who like to tweak everything.</p>
   <div class="grid">
     <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8l-9-5-9 5v8l9 5z"/><path d="M3.3 7.5L12 12l8.7-4.5M12 22V12"/></svg></div><h3>Every mod loader</h3><p>Fabric, Quilt, Forge and NeoForge. Duet installs the loader and the right Java for you.</p></div>
-    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg></div><h3>Modpacks in one click</h3><p>Browse Modrinth's modpacks or drop in a .mrpack. Minecraft, mods and configs are set up for you.</p></div>
-    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></div><h3>Built for FPS</h3><p>Built-in speed mods like Sodium and Lithium, NVIDIA turbo on RTX and GTX 16 cards, and an FPS check that shows what slows your game down.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg></div><h3>Modpacks in one click</h3><p>Browse Modrinth's modpacks or drop in a .mrpack. Minecraft, mods and configs are set up for you — and a badge shows when mods have updates.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></div><h3>Built for FPS</h3><p>Built-in speed mods like Sodium and Lithium, NVIDIA turbo on RTX and GTX 16 cards, and an FPS check that shows what slows your game down. Duet tunes memory and render distance to your PC by itself.</p></div>
     <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div><h3>See further</h3><p>Turn on Far view for 50+ chunk render distance with Voxy or Distant Horizons — one switch.</p></div>
     <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3l-5 3 2 5 3-1v11h8V10l3 1 2-5-5-3a4 4 0 0 1-8 0z"/></svg></div><h3>Skins &amp; capes</h3><p>A 3D skin preview, your own skin library, copy any player's skin and switch capes in a click.</p></div>
-    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Crash doctor</h3><p>When the game crashes, Duet tells you why in plain words and fixes it — update, install or turn off the right mod.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Crash &amp; lag doctor</h3><p>When the game crashes, Duet tells you why in plain words and fixes it. When it lagged, Duet shows which mod froze it and how to fix that too.</p></div>
     <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 9 9c0-.6-.5-1-1-1h-3a2 2 0 0 1-2-2V6c0-.6-.4-1-1-1"/><circle cx="7.5" cy="10.5" r="1"/><circle cx="10" cy="7" r="1"/><circle cx="8" cy="15" r="1"/></svg></div><h3>Themes that celebrate</h3><p>Seven colour themes plus seasonal ones for Halloween, Christmas, New Year and more. Video backgrounds and music.</p></div>
-    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14M5 12h14M5 16h9"/></svg></div><h3>15 languages</h3><p>English, 中文, हिन्दी, Español, العربية, Français, বাংলা, Português, Русский, Indonesia, اردو, Deutsch, 日本語, Tiếng Việt, Türkçe.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14M5 12h14M5 16h9"/></svg></div><h3>36 languages</h3><p>English, Deutsch, Français, Español, Italiano, Polski, Русский, Türkçe, 日本語, 简体中文, 繁體中文 and 25 more European languages.</p></div>
     <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg></div><h3>Move in, keep everything</h3><p>Copies your worlds, mods and settings from Modrinth, Dawn, Prism, CurseForge and more. Duet updates itself, too.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg></div><h3>Share a modpack</h3><p>Send a friend your whole setup as one small file — mods, configs, shaders and servers, worlds if you want. Your login is never inside.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><h3>Screenshot gallery</h3><p>Every screenshot from every modpack in one place. Copy one for Discord, open its folder or make it your background.</p></div>
+    <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 17.5L3 6V3h3l11.5 11.5M13 19l6-6M16 16l4 4M19 21l2-2"/></svg></div><h3>Duet Mods built in</h3><p>FPS, CPS, armor, effects, crosshair and more for Fabric and Quilt 1.21.9–1.21.11 — loaded by the launcher, nothing lands in your mods folder.</p></div>
   </div>
   <div class="duo"><img src="performance.jpg" alt="Performance settings"><img src="halloween.jpg" alt="Halloween theme"></div>
 </div></section>
@@ -117,11 +145,11 @@ footer .legal{font-size:11.5px;letter-spacing:.3px;margin-top:6px;opacity:.75}
   <h2>Download</h2>
   <p class="sub">Free. Pick your system — after that, Duet keeps itself updated.</p>
   <div class="dl">
-    <div class="card" data-os="win"><span class="tag">Windows 10 / 11</span><h3>Installer</h3><p>Installs in seconds, updates automatically.</p><a class="btn primary" data-asset="x64-setup.exe" href="https://github.com/KadirG47/duet/releases/latest">Download .exe</a></div>
-    <div class="card" data-os="linux"><span class="tag">Linux · any distro</span><h3>AppImage</h3><p>Runs everywhere, updates automatically. Make it executable, then open it.</p><a class="btn" data-asset="amd64.AppImage" href="https://github.com/KadirG47/duet/releases/latest">Download AppImage</a></div>
-    <div class="card" data-os="deb"><span class="tag">Ubuntu · Debian · Mint</span><h3>.deb package</h3><p>Installs with your package manager, codecs included.</p><a class="btn" data-asset="amd64.deb" href="https://github.com/KadirG47/duet/releases/latest">Download .deb</a></div>
+    <div class="card" data-os="win"><span class="tag">Windows 10 / 11</span><h3>Installer</h3><p>Installs in seconds, updates automatically.</p><a class="btn primary" data-asset="x64-setup.exe" href="https://github.com/Hydrate36/duet/releases/latest">Download .exe</a></div>
+    <div class="card" data-os="linux"><span class="tag">Linux · any distro</span><h3>AppImage</h3><p>Runs everywhere, updates automatically. Make it executable, then open it.</p><a class="btn" data-asset="amd64.AppImage" href="https://github.com/Hydrate36/duet/releases/latest">Download AppImage</a></div>
+    <div class="card" data-os="deb"><span class="tag">Ubuntu · Debian · Mint</span><h3>.deb package</h3><p>Installs with your package manager, codecs included.</p><a class="btn" data-asset="amd64.deb" href="https://github.com/Hydrate36/duet/releases/latest">Download .deb</a></div>
   </div>
-  <p class="small">All versions and release notes: <a href="https://github.com/KadirG47/duet/releases">GitHub releases</a>.</p>
+  <p class="small">All versions and release notes: <a href="https://github.com/Hydrate36/duet/releases">GitHub releases</a>.</p>
 </div></section>
 
 <section id="faq"><div class="wrap">
@@ -129,12 +157,13 @@ footer .legal{font-size:11.5px;letter-spacing:.3px;margin-top:6px;opacity:.75}
   <details><summary>Windows says "Windows protected your PC"</summary><p>Duet isn't code-signed yet, so SmartScreen warns about new apps. Click <b>More info → Run anyway</b>. Official downloads are only on this site and on GitHub.</p></details>
   <details><summary>Do I need a Minecraft account?</summary><p>Yes — you sign in with the Microsoft account that owns Minecraft: Java Edition, on Microsoft's own page. Duet never sees your password. Microsoft sign-in is currently waiting for Mojang's approval for new launchers.</p></details>
   <details><summary>Can I bring my stuff from another launcher?</summary><p>Yes. On first start Duet asks whether to copy your instances from the Modrinth App, Dawn (Feather), Prism, MultiMC, CurseForge, ATLauncher, GDLauncher or the official launcher — worlds, mods, packs, settings and servers. It's a copy: the other launcher keeps its files, and account logins are never copied.</p></details>
+  <details><summary>Who can see what I'm playing?</summary><p>Only the friends you added, and only what you allow: in the Friends page you can look offline, hide what you're playing, or hide your server. Duet checks your account with Mojang the same way Minecraft servers do, so your login never leaves your PC.</p></details>
   <details><summary>A video background doesn't play on Linux</summary><p>Use a <code>.webm</code> video, or install the codecs: <code>sudo apt install gstreamer1.0-libav gstreamer1.0-plugins-good</code>.</p></details>
 </div></section>
 
 <footer><div class="wrap">
   <img src="emblem-512.png" alt=""><br>
-  © 2026 Hydrate (KadirG47). All rights reserved. · <a href="https://github.com/KadirG47/duet">GitHub</a>
+  © 2026 Hydrate (Hydrate36). All rights reserved. · <a href="https://github.com/Hydrate36/duet">GitHub</a>
   <div class="legal">NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.</div>
 </div></footer>
 
@@ -144,7 +173,7 @@ footer .legal{font-size:11.5px;letter-spacing:.3px;margin-top:6px;opacity:.75}
   const ua = navigator.userAgent;
   const isLinux = /Linux/i.test(ua) && !/Android/i.test(ua);
   try {
-    const r = await fetch("https://api.github.com/repos/KadirG47/duet/releases/latest");
+    const r = await fetch("https://api.github.com/repos/Hydrate36/duet/releases/latest");
     if (!r.ok) return;
     const rel = await r.json();
     document.getElementById("ver").textContent = "Version " + rel.tag_name.replace(/^v/, "") + " · Windows & Linux";
